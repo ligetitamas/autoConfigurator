@@ -15,6 +15,7 @@ export default class CsudijoModule extends VuexModule {
   private _topFoods: any = [];
   private _cars: any = [];
   private _model: any = [];
+  private _carId: any = "";
 
   private config: AxiosRequestConfig = {
     withCredentials: false,
@@ -33,6 +34,9 @@ export default class CsudijoModule extends VuexModule {
   get model(): any[] {
     return this._model;
   }
+  get carId(): any {
+    return this._carId;
+  }
 
   get foods(): any[] {
     return this._foods;
@@ -44,6 +48,19 @@ export default class CsudijoModule extends VuexModule {
 
   get numberOfFoods(): number {
     return this.foods.length;
+  }
+
+  @Action
+  public async getID(carURL: string): Promise<any> {
+    axios
+      .get(`/cars/${carURL}/convert`, this.config)
+      .then((res: AxiosResponse) => {
+        const data: any = res.data;
+        if (data) {
+          this.context.commit("mutateId", data);
+        }
+      })
+      .catch((ex: AxiosError) => alert(ex.message));
   }
 
   @Action
@@ -148,6 +165,10 @@ export default class CsudijoModule extends VuexModule {
   @Mutation
   private mutateModel(data: any): void {
     this._model = data;
+  }
+  @Mutation
+  private mutateId(data: any): void {
+    this._carId = data;
   }
 
   @Mutation
