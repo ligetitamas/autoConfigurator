@@ -1,5 +1,5 @@
 <template>
-  <b-card class="index">
+  <b-card class="index w-75">
     <b-row class="welcome">
       <b-col class="md">
         <h1 class="display-2 text-center">Build your Tesla!</h1>
@@ -48,5 +48,8 @@ export default class IndexComp extends Vue {
 }
 .authors {
   padding-top: 25rem;
+}
+.index {
+  margin-left: 12.5%;
 }
 </style>
