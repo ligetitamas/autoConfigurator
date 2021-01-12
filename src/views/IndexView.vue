@@ -1,7 +1,5 @@
 <template>
-  <div class="teszt">
-    <IndexComp />
-  </div>
+  <IndexComp />
 </template>
 
 <script lang="ts">

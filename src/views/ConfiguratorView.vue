@@ -1,7 +1,5 @@
 <template>
-  <div class="teszt">
-    <ConfiguratorComp />
-  </div>
+  <ConfiguratorComp />
 </template>
 
 <script lang="ts">
