@@ -1,7 +1,7 @@
 <template>
   <div id="content">
     <b-navbar toggleable="sm" type="dark" variant="info" fixed="top">
-      <b-navbar-brand href="#">BuildYourTesla</b-navbar-brand>
+      <b-navbar-brand :to="{ name: 'index' }">BuildYourTesla</b-navbar-brand>
 
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
