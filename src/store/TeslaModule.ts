@@ -2,7 +2,7 @@ import axios, { AxiosResponse, AxiosError, AxiosRequestConfig } from "axios";
 import { Action, Module, Mutation, VuexModule } from "vuex-module-decorators";
 
 @Module
-export default class CsudijoModule extends VuexModule {
+export default class TeslaModule extends VuexModule {
   // State (temp fields, direct access from store):
   private __showEditForm: boolean = false;
   private __editedFood: any;
