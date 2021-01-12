@@ -33,7 +33,7 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 @Component
-export default class Teszt2Comp extends Vue {
+export default class ConfiguratorComp extends Vue {
   id: string;
   data() {
     return {

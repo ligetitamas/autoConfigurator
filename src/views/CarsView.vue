@@ -1,17 +1,17 @@
 <template>
   <div class="home">
-    <TeslaTestComp />
+    <CarsComp />
   </div>
 </template>
 
 <script lang="ts">
-import TeslaTestComp from "@/components/TeslaTestComp.vue"; // @ is an alias to /src
+import CarsComp from "@/components/CarsComp.vue"; // @ is an alias to /src
 import { Component, Vue } from "vue-property-decorator";
 
 @Component({
   components: {
-    TeslaTestComp
+    CarsComp
   }
 })
-export default class TeslaTestView extends Vue {}
+export default class CarsView extends Vue {}
 </script>

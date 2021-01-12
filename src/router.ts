@@ -3,8 +3,8 @@ import Router from "vue-router";
 import CsudijoView from "./views/CsudijoView.vue";
 import HomeView from "./views/HomeView.vue";
 import VuexDemoView from "./views/VuexDemoView.vue";
-import TeslaTestView from "./views/TeslaTestView.vue";
-import Teszt2View from "./views/Teszt2View.vue";
+import CarsView from "./views/CarsView.vue";
+import ConfiguratorView from "./views/ConfiguratorView.vue";
 
 Vue.use(Router);
 
@@ -13,14 +13,14 @@ export default new Router({
   mode: "history",
   routes: [
     {
-      component: TeslaTestView,
-      name: "asd",
-      path: "/asd"
+      component: CarsView,
+      name: "cars",
+      path: "/cars"
     },
     {
-      component: Teszt2View,
-      name: "teszt2",
-      path: "/teszt2:id"
+      component: ConfiguratorView,
+      name: "configurator",
+      path: "/configurator-:id"
     },
     {
       component: HomeView,
