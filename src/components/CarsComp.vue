@@ -18,7 +18,7 @@
         <b-col class="md">
           <p class="display-4 pt-5">{{ car.name }}</p>
           <p class="h4 pb-4">{{ car.description }}</p>
-          <router-link tag="button" :to="{ name: 'configurator', params: { id: `${car.url}` } }" class="btn btn-danger">Vedd meg</router-link>
+          <router-link tag="button" :to="{ name: 'configurator', params: { id: `${car.url}` } }" class="btn btn-danger">Konfigurálja meg</router-link>
         </b-col>
       </b-row>
     </b-card>
