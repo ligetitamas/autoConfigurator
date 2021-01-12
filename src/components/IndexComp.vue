@@ -12,18 +12,21 @@
         <button @click="Search()">Keresés</button>
       </div>
     </div>
-    <div class="row fixed-bottom">
+    <div class="row fixed-bottom pb-5 w-60">
       <div class="col-md">
         <h3>Tóth Balázs</h3>
         <p>Backend</p>
+        <img src="https://via.placeholder.com/160x164" alt="tb" />
       </div>
       <div class="col-md">
         <h3>Ligeti Tamás</h3>
         <p>Frontend funkcionalitás</p>
+        <img src="../views/kepek/lt.jpg" alt="lt" />
       </div>
       <div class="col-md">
         <h3>Gaál Bence</h3>
         <p>Frontend design</p>
+        <img src="https://via.placeholder.com/160x164" alt="gb" />
       </div>
     </div>
   </div>
