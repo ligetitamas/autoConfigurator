@@ -5,8 +5,7 @@
         <p>{{ car.name }}</p>
         <p>{{ car.description }}</p>
         <router-link tag="button" :to="{ name: 'teszt2', params: { id: `${car.url}` } }">Vedd meg</router-link>
-      </div>
-      <h1>Készítették a stricik</h1>
+      </div>    
     </div>
   </div>
 </template>
