@@ -1,6 +1,6 @@
 <template>
   <div id="content">
-    <b-navbar toggleable="sm" type="dark" variant="info" fixed="top">
+    <b-navbar toggleable="sm" type="light" variant="danger" fixed="top">
       <b-navbar-brand :to="{ name: 'index' }">BuildYourTesla</b-navbar-brand>
 
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
