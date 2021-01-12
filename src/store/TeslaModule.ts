@@ -88,6 +88,18 @@ export default class TeslaModule extends VuexModule {
       .catch((ex: AxiosError) => alert(ex.message));
   }
   @Action
+  public async saveConfig(config: any): Promise<any> {
+    axios
+      .post("/teslas", config, this.config)
+      .then((res: AxiosResponse) => {
+        if (res.data.errmsg || res.data.message) {
+          alert(res.data.errmsg ? res.data.errmsg : res.data.message);
+        } else {
+        }
+      })
+      .catch((ex: AxiosError) => alert(ex.message));
+  }
+  @Action
   public async getFoods(): Promise<any> {
     axios
       .get("/csudijo", this.config)

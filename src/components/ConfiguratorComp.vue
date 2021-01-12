@@ -74,6 +74,9 @@ export default class ConfiguratorComp extends Vue {
       }
     });
     console.log(form);
+    this.$store.dispatch("saveConfig", {
+      config: form
+    });
   }
 }
 </script>
