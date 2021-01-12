@@ -1,7 +1,7 @@
 <template>
   <div class="main">
-    <b-card class="config w-75">
-      <b-row>
+    <b-card class="config w-75 h-75">
+      <b-row class="title mb-5">
         <b-col class="md">
           <h1>{{ this.$store.getters.model.name }}</h1>
         </b-col>
@@ -12,30 +12,29 @@
         </b-col>
         <b-col class="md">
           <form action="post">
-            <h3>Vásárló neve</h3>
+            <h3 class="pt-2">Vásárló neve</h3>
             <input id="nameInput" type="text" />
-            <h3>Színek</h3>
-            <div v-for="color in this.$store.getters.model.colors" :key="color" class="colors">
-              <input :id="color.name" type="radio" name="color" :value="[color.name + ';' + color.hex]" />
-              <label :style="{ color: color.hex }" :for="color.name">{{ color.name }}</label>
+            <h3 class="pt-2">Színek</h3>
+            <div v-for="color in this.$store.getters.model.colors" :key="color" class="colors form-check form-check-inline">
+              <input :id="color.name" type="radio" name="color" :value="[color.name + ';' + color.hex]" class="form-check-input" />
+              <label class="form-check-label" :for="color.name">{{ color.name }} <i :style="{ color: color.hex }" class="fas fa-square"></i></label>
             </div>
-            <h3>Extrák</h3>
-            <div v-for="extras in this.$store.getters.model.options" :key="extras" class="extras">
+            <div v-for="extras in this.$store.getters.model.options" :key="extras" class="extras p-2">
               <h3>{{ extras.name }}</h3>
               <div v-if="extras.multipleChoices">
-                <div v-for="option in extras.options" :key="option">
-                  <input :id="option.key" :name="extras.name" :value="option.value" type="checkbox" />
-                  <label :for="option.key">{{ option.key }}</label>
+                <div v-for="option in extras.options" :key="option" class="form-check">
+                  <input :id="option.key" :name="extras.name" :value="option.value" type="checkbox" class="form-check-input" />
+                  <label :for="option.key" class="form-check-label">{{ option.key }}</label>
                 </div>
               </div>
               <div v-else>
-                <div v-for="option in extras.options" :key="option">
-                  <input :id="option.key" :value="option.value" type="radio" :name="extras.name" />
-                  <label :for="option.key">{{ option.key }}</label>
+                <div v-for="option in extras.options" :key="option" class="form-check form-check-inline">
+                  <input :id="option.key" :value="option.value" type="radio" :name="extras.name" class="form-check-input" />
+                  <label :for="option.key" class="form-check-label">{{ option.key }}</label>
                 </div>
               </div>
             </div>
-            <input type="button" value="Mentés" @click="submit($event.target.form)" />
+            <input class="btn btn-danger" type="button" value="Mentés" @click="submit($event.target.form)" />
           </form>
         </b-col>
       </b-row>
@@ -108,10 +107,23 @@ ul {
 .main {
   background-color: rgb(139, 30, 43);
   font-family: Arial, Helvetica, sans-serif;
-  height: 150%;
+  height: 55.7rem;
 }
 body,
 html {
   height: 200%;
+}
+.title {
+  background-color: #e3e3e3;
+  margin: 0;
+  padding: 0;
+}
+b-card {
+  margin: 0;
+  padding: 0;
+}
+.card-body {
+  padding: 0;
+  padding-bottom: 1.25rem;
 }
 </style>
