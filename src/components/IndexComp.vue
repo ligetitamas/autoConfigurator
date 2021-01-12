@@ -1,12 +1,30 @@
 <template>
-  <div class="index">
-    <div class="welcome">
-      <h1>Build your Tesla!</h1>
+  <div class="index canvas text-center m-auto">
+    <div class="welcome row">
+      <div class="col-md">
+        <h1 class="display-2 py-5 text-center">Build your Tesla!</h1>
+      </div>
     </div>
-    <div class="otherTeslas">
-      <h3>Adja meg ismerősei id-jét:</h3>
-      <input name="idInput" type="text" />
-      <button @click="Search()">Keresés</button>
+    <div class="otherTeslas row">
+      <div class="col-md mb-5">
+        <h3 class="h3 text-center giveid">Adja meg ismerősei id-jét:</h3>
+        <input name="idInput" type="text" />
+        <button @click="Search()">Keresés</button>
+      </div>
+    </div>
+    <div class="row fixed-bottom">
+      <div class="col-md">
+        <h3>Tóth Balázs</h3>
+        <p>Backend</p>
+      </div>
+      <div class="col-md">
+        <h3>Ligeti Tamás</h3>
+        <p>Frontend funkcionalitás</p>
+      </div>
+      <div class="col-md">
+        <h3>Gaál Bence</h3>
+        <p>Frontend design</p>
+      </div>
     </div>
   </div>
 </template>
@@ -21,4 +39,8 @@ export default class IndexComp extends Vue {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.giveid {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+</style>
