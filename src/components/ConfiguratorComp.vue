@@ -1,32 +1,45 @@
 <template>
-  <div class="car">
-    <h1>{{ this.$store.getters.model.name }}</h1>
-    <form action="post">
-      <h3>Vásárló neve</h3>
-      <input id="nameInput" type="text" />
-      <h3>Színek</h3>
-      <div v-for="color in this.$store.getters.model.colors" :key="color" class="colors">
-        <input :id="color.name" type="radio" name="color" :value="[color.name + ';' + color.hex]" />
-        <label :style="{ color: color.hex }" :for="color.name">{{ color.name }}</label>
-      </div>
-      <h3>Extrák</h3>
-      <div v-for="extras in this.$store.getters.model.options" :key="extras" class="extras">
-        <h3>{{ extras.name }}</h3>
-        <div v-if="extras.multipleChoices">
-          <div v-for="option in extras.options" :key="option">
-            <input :id="option.key" :name="extras.name" :value="option.value" type="checkbox" />
-            <label :for="option.key">{{ option.key }}</label>
-          </div>
-        </div>
-        <div v-else>
-          <div v-for="option in extras.options" :key="option">
-            <input :id="option.key" :value="option.value" type="radio" :name="extras.name" />
-            <label :for="option.key">{{ option.key }}</label>
-          </div>
-        </div>
-      </div>
-      <input type="button" value="Mentés" @click="submit($event.target.form)" />
-    </form>
+  <div class="main">
+    <b-card class="config w-75">
+      <b-row>
+        <b-col class="md">
+          <h1>{{ this.$store.getters.model.name }}</h1>
+        </b-col>
+      </b-row>
+      <b-row>
+        <b-col class="md">
+          <img :src="require('../views/kepek/' + id + '.png')" class="img pl-5 ml-5" />
+        </b-col>
+        <b-col class="md">
+          <form action="post">
+            <h3>Vásárló neve</h3>
+            <input id="nameInput" type="text" />
+            <h3>Színek</h3>
+            <div v-for="color in this.$store.getters.model.colors" :key="color" class="colors">
+              <input :id="color.name" type="radio" name="color" :value="[color.name + ';' + color.hex]" />
+              <label :style="{ color: color.hex }" :for="color.name">{{ color.name }}</label>
+            </div>
+            <h3>Extrák</h3>
+            <div v-for="extras in this.$store.getters.model.options" :key="extras" class="extras">
+              <h3>{{ extras.name }}</h3>
+              <div v-if="extras.multipleChoices">
+                <div v-for="option in extras.options" :key="option">
+                  <input :id="option.key" :name="extras.name" :value="option.value" type="checkbox" />
+                  <label :for="option.key">{{ option.key }}</label>
+                </div>
+              </div>
+              <div v-else>
+                <div v-for="option in extras.options" :key="option">
+                  <input :id="option.key" :value="option.value" type="radio" :name="extras.name" />
+                  <label :for="option.key">{{ option.key }}</label>
+                </div>
+              </div>
+            </div>
+            <input type="button" value="Mentés" @click="submit($event.target.form)" />
+          </form>
+        </b-col>
+      </b-row>
+    </b-card>
   </div>
 </template>
 
@@ -84,5 +97,21 @@ export default class ConfiguratorComp extends Vue {
 <style scoped>
 ul {
   list-style-type: none;
+}
+.img {
+  height: 20rem;
+  width: auto;
+}
+.config {
+  margin-left: 12.5%;
+}
+.main {
+  background-color: rgb(139, 30, 43);
+  font-family: Arial, Helvetica, sans-serif;
+  height: 150%;
+}
+body,
+html {
+  height: 200%;
 }
 </style>
