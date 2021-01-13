@@ -3,6 +3,7 @@ import Router from "vue-router";
 import CarsView from "./views/CarsView.vue";
 import ConfiguratorView from "./views/ConfiguratorView.vue";
 import IndexView from "./views/IndexView.vue";
+import SavedCarView from "./views/SavedCarView.vue";
 
 Vue.use(Router);
 
@@ -24,6 +25,11 @@ export default new Router({
       component: ConfiguratorView,
       name: "configurator",
       path: "/configurator-:id"
+    },
+    {
+      component: SavedCarView,
+      name: "savedCar",
+      path: "/savedCar"
     }
   ]
 });

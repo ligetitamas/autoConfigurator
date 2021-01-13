@@ -6,6 +6,7 @@ export default class TeslaModule extends VuexModule {
   // State (classic fields)
   private _cars: any = [];
   private _model: any = [];
+  private _savedCar: any = [];
   private _carId: any = "";
 
   private config: AxiosRequestConfig = {
@@ -27,6 +28,9 @@ export default class TeslaModule extends VuexModule {
   }
   get carId(): any {
     return this._carId;
+  }
+  get savedCar(): any[] {
+    return this._savedCar;
   }
 
   @Action
@@ -67,6 +71,18 @@ export default class TeslaModule extends VuexModule {
       .catch((ex: AxiosError) => alert(ex.message));
   }
   @Action
+  public async getSavedCar(carId: string): Promise<any> {
+    axios
+      .get(`/teslas/${carId}`, this.config)
+      .then((res: AxiosResponse) => {
+        const data: any = res.data;
+        if (data) {
+          this.context.commit("mutateSavedCar", data);
+        }
+      })
+      .catch((ex: AxiosError) => alert(ex.message));
+  }
+  @Action
   public async saveConfig(config: any): Promise<any> {
     axios.post("/teslas", config, this.config).then((res: AxiosResponse) => {
       const id: any = res.data._id;
@@ -78,6 +94,10 @@ export default class TeslaModule extends VuexModule {
   @Mutation
   private mutateModel(data: any): void {
     this._model = data;
+  }
+  @Mutation
+  private mutateSavedCar(data: any): void {
+    this._savedCar = data;
   }
   @Mutation
   private mutateId(data: any): void {

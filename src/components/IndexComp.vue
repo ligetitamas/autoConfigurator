@@ -16,8 +16,10 @@
       <b-row class="otherTeslas">
         <b-col class="md">
           <h3 class="h3 text-center giveid">Adja meg ismerősei ID-jét:</h3>
-          <input name="idInput" type="text" />
-          <button @click="Search()">Keresés</button>
+          <input @change="Change()" id="idInput" name="idInput" type="text" />
+          <router-link tag="button" :to="{ name: 'savedCar', params: { carId: `${carid}` } }" class="btn btn-danger" @on="Search()"
+            >Keresés</router-link
+          >
         </b-col>
       </b-row>
       <b-row class="sticky-bottom authors">
@@ -45,8 +47,9 @@
 import { Component, Vue } from "vue-property-decorator";
 @Component
 export default class IndexComp extends Vue {
-  public Search() {
-    console.log("keres");
+  carid: any = "";
+  public Change() {
+    this.carid = (document.getElementById("idInput") as HTMLInputElement).value;
   }
 }
 </script>
