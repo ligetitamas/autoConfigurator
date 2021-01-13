@@ -5,7 +5,11 @@
       <!-- <h2>{{ this.$store.getters.savedCar.name }}</h2> -->
     </div>
     <div class="props">
-      <table class="table table-bordered table-sm bg-danger text-white">
+      <table class="table table-bordered table-sm bg-danger text-white w-50">
+        <tr>
+          <td>Szín</td>
+          <td>{{ this.$store.getters.savedCar.color.name }}</td>
+        </tr>
         <tr v-for="(extra, index) in this.$store.getters.savedCar.values" :key="index">
           <td>{{ extra.key }}</td>
           <td>{{ extra.value.key }}</td>
@@ -40,4 +44,8 @@ export default class SavedCarComp extends Vue {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+.table {
+  margin-left: 25%;
+}
+</style>

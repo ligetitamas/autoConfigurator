@@ -26,7 +26,7 @@
         <b-col class="md">
           <h3>Tóth Balázs</h3>
           <p>Backend</p>
-          <img src="https://via.placeholder.com/160x164" alt="tb" />
+          <img src="../views/kepek/tb.jpg" alt="tb" />
         </b-col>
         <b-col class="md">
           <h3>Ligeti Tamás</h3>
@@ -36,7 +36,7 @@
         <b-col class="md">
           <h3>Gaál Bence</h3>
           <p>Frontend design</p>
-          <img src="https://via.placeholder.com/160x164" alt="gb" />
+          <img src="../views/kepek/gb.jpg" alt="gb" />
         </b-col>
       </b-row>
     </b-card>
