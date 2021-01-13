@@ -15,20 +15,20 @@
             <h3 class="pt-2">Vásárló neve</h3>
             <input id="nameInput" type="text" />
             <h3 class="pt-2">Színek</h3>
-            <div v-for="color in this.$store.getters.model.colors" :key="color" class="colors form-check form-check-inline">
+            <div v-for="(color, index) in this.$store.getters.model.colors" :key="index" class="colors form-check form-check-inline">
               <input :id="color.name" type="radio" name="color" :value="[color.name + ';' + color.hex]" class="form-check-input" />
               <label class="form-check-label" :for="color.name">{{ color.name }} <i :style="{ color: color.hex }" class="fas fa-square"></i></label>
             </div>
-            <div v-for="extras in this.$store.getters.model.options" :key="extras" class="extras p-2">
+            <div v-for="(extras, index) in this.$store.getters.model.options" :key="index" class="extras p-2">
               <h3>{{ extras.name }}</h3>
               <div v-if="extras.multipleChoices">
-                <div v-for="option in extras.options" :key="option" class="form-check">
+                <div v-for="(option, index) in extras.options" :key="index" class="form-check">
                   <input :id="option.key" :name="extras.name" :value="option.value" type="checkbox" class="form-check-input" />
                   <label :for="option.key" class="form-check-label">{{ option.key }}</label>
                 </div>
               </div>
               <div v-else>
-                <div v-for="option in extras.options" :key="option" class="form-check form-check-inline">
+                <div v-for="(option, index) in extras.options" :key="index" class="form-check form-check-inline">
                   <input :id="option.key" :value="option.value" type="radio" :name="extras.name" class="form-check-input" />
                   <label :for="option.key" class="form-check-label">{{ option.key }}</label>
                 </div>
