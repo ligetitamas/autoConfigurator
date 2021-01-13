@@ -12,8 +12,8 @@
         </b-col>
         <b-col class="md">
           <form action="post">
-            <h3 class="pt-2">Vásárló neve</h3>
-            <input id="nameInput" type="text" />
+            <h3 class="pt-2">Vásárló nev</h3>
+            <input id="nameInpu" type="text" />
             <h3 class="pt-2">Színek</h3>
             <div v-for="(color, index) in this.$store.getters.model.colors" :key="index" class="colors form-check form-check-inline">
               <input :id="color.name" type="radio" name="color" :value="[color.name + ';' + color.hex]" class="form-check-input" />
