@@ -2,9 +2,10 @@
   <b-card>
     <div class="owner">
       <h1>{{ this.$store.getters.savedCar.owner }} kocsija</h1>
+      <!-- <h2>{{ this.$store.getters.savedCar.name }}</h2> -->
     </div>
     <div class="props">
-      <table>
+      <table class="table table-bordered table-sm bg-danger text-white">
         <tr v-for="(extra, index) in this.$store.getters.savedCar.values" :key="index">
           <td>{{ extra.key }}</td>
           <td>{{ extra.value.key }}</td>

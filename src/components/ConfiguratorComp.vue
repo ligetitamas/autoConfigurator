@@ -12,7 +12,7 @@
         </b-col>
         <b-col class="md">
           <form action="post">
-            <h3 class="pt-2">Vásárló nev</h3>
+            <h3 class="pt-2">Vásárló név</h3>
             <input id="nameInput" type="text" />
             <h3 class="pt-2">Színek</h3>
             <div v-for="(color, index) in this.$store.getters.model.colors" :key="index" class="colors form-check form-check-inline">
