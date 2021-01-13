@@ -16,7 +16,7 @@
       <b-row class="otherTeslas">
         <b-col class="md">
           <h3 class="h3 text-center giveid">Adja meg ismerősei ID-jét:</h3>
-          <input @change="Change()" id="idInput" name="idInput" type="text" />
+          <input id="idInput" name="idInput" type="text" @change="Change()" />
           <router-link tag="button" :to="{ name: 'savedCar', params: { carId: `${carid}` } }" class="btn btn-danger" @on="Search()"
             >Keresés</router-link
           >

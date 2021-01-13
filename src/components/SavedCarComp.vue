@@ -1,5 +1,24 @@
 <template>
-  <b-card> </b-card>
+  <b-card>
+    <div class="owner">
+      <h1>{{ this.$store.getters.savedCar.owner }} kocsija</h1>
+    </div>
+    <div class="props">
+      <table>
+        <tr v-for="(extra, index) in this.$store.getters.savedCar.values" :key="index">
+          <td>{{ extra.key }}</td>
+          <td>{{ extra.value.key }}</td>
+        </tr>
+      </table>
+    </div>
+    <!-- <div class="color">
+      <p>Szín: {{ this.$store.getters.savedCar.color.name }}</p>
+    </div>
+    <div v-for="(extra, index) in this.$store.getters.savedCar.values" :key="index">       
+      <h3>{{ extra.key }}</h3>
+      <p>{{ extra.value.key }}</p>
+    </div> -->
+  </b-card>
 </template>
 
 <script lang="ts">
