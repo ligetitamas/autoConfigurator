@@ -8,7 +8,7 @@
       </b-row>
       <b-row>
         <b-col class="md">
-          <img :src="require('../views/kepek/' + id + '.png')" class="img pl-5 ml-5" />
+          <img :src="pictureUrl" class="img pl-5 ml-5" />
         </b-col>
         <b-col class="md">
           <form action="post">
@@ -47,13 +47,16 @@ import { Component, Vue } from "vue-property-decorator";
 @Component
 export default class ConfiguratorComp extends Vue {
   id: string;
+  pictureUrl: string;
   data() {
     return {
-      id: ""
+      id: "",
+      pictureUrl: ""
     };
   }
   created() {
     this.id = this.$route.params.id;
+    this.pictureUrl = this.$route.params.pictureUrl;
     this.$store.dispatch("getModel", this.id);
     this.$store.dispatch("getID", this.id);
   }
@@ -80,15 +83,13 @@ export default class ConfiguratorComp extends Vue {
         form.color.name = color[0];
         form.color.hex = color[1];
       } else {
-        let extra: any = { key: element.name, value: element.value };
+        let extra: any = { key: element.name, value: { key: element.id, value: element.value } };
         //{"key":"${element.name}","value":"${element.value}}"`;
         form.values.push(extra);
       }
     });
     console.log(form);
-    this.$store.dispatch("saveConfig", {
-      config: form
-    });
+    this.$store.dispatch("saveConfig", form);
   }
 }
 </script>
