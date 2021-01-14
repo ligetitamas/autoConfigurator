@@ -17,9 +17,7 @@
         <b-col class="md">
           <h3 class="h3 text-center giveid">Adja meg ismerősei ID-jét:</h3>
           <input id="idInput" name="idInput" type="text" @change="Change()" />
-          <router-link tag="button" :to="{ name: 'savedCar', params: { carId: `${carid}` } }" class="btn btn-danger" @on="Search()"
-            >Keresés</router-link
-          >
+          <router-link tag="button" :to="{ name: 'savedCar', params: { carId: `${carid}` } }" class="btn btn-danger">Keresés</router-link>
         </b-col>
       </b-row>
       <b-row class="sticky-bottom authors">
